@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sibonelo's Portfolio - Home</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link rel="stylesheet" href="site.css"> 
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">NellowTech💜</a>
+        <nav class="navbar">
+            <a href="Index.html" class="active">Home</a>
+            <a href="Education.html">Education</a> 
+            <a href="Skills.html">Skills</a>
+            <a href="Services.html">Services</a>
+            <a href="Contact.html">Contact</a>
+        </nav>
+        <i class="fas fa-bars" id="menu-icon"></i> 
+    </header>
+
+    <main>
+        <section class="home" id="home">
+            <div class="home-img">
+                <img src="/images/mainPic.png" alt="Main Picture">
+            </div>
+            <div class="home-content">
+                <h1>Hi it's <span>Sibonelo</span></h1>
+                <h3 class="typing-text">I am a <span class="rotating-text">Candidate</span></h3>
+                <p>Highly motivated IT Candidate👩‍💻💜. </p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                <a href="Contact.html" class="btn">Hit me</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2025 by NellowTech💜 | All Rights Reserved.</p>
+        </div>
+        <div class="footer-icon-top">
+            <a href="index.html"><i class="fas fa-arrow-up"></i></a>
+        </div>
+    </footer>
+    
+    <script>
+        // Simple script for the menu icon functionality
+        let menuIcon = document.querySelector('#menu-icon');
+        let navbar = document.querySelector('.navbar');
+
+        menuIcon.onclick = () => {
+            menuIcon.classList.toggle('fa-times');
+            navbar.classList.toggle('active');
+        };
+
+        // Simple script for rotating text (adjust the array of words here)
+        const rotatingText = document.querySelector('.rotating-text');
+        // Initial text for the rotating element
+        rotatingText.textContent = 'n IT Support Technician'; 
+        const textArray = ['Front-end Developer', 'UI/UX Designer', 'Tech Enthusiast', 'Problem Solver'];
+        let textIndex = 0;
+        let charIndex = rotatingText.textContent.length; // Start with the existing text length
+
+        function type() {
+             // Reset to the next word if the current word is fully displayed
+            if (charIndex === textArray[textIndex].length) {
+                setTimeout(erase, 2000);
+                return;
+            }
+            if (charIndex < textArray[textIndex].length) {
+                rotatingText.textContent += textArray[textIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(type, 100);
+            } 
+        }
+
+        function erase() {
+            if (charIndex > 0) {
+                rotatingText.textContent = textArray[textIndex].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(erase, 50);
+            } else {
+                textIndex = (textIndex + 1) % textArray.length;
+                setTimeout(type, 500);
+            }
+        }
+        
+        // Function to start the typing/erasing animation cycle
+        function startTypingAnimation() {
+            // First, erase the initial 'Candidate' text
+            charIndex = rotatingText.textContent.length;
+            textIndex = 0;
+            erase();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (rotatingText) {
+                // Wait a moment before starting the loop
+                setTimeout(startTypingAnimation, 1000);
+            }
+        });
+    </script>
+</body>
+</html>
