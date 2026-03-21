@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sibonelo Mpanza | ICT Specialist</title>
-    <link rel="stylesheet" href="site.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <title>Sibonelo Mpanza | ICT Support Specialist</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="site.css">
 </head>
 <body>
 
@@ -15,7 +15,7 @@
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
+            <li><a href="#projects">Work</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -23,12 +23,14 @@
     <header id="home">
         <div class="hero-content">
             <div class="hero-text">
+                <div class="badge">Available for Hire</div>
                 <h1>Hi, I'm <span>Sibonelo Mpanza</span></h1>
                 <h3>ICT Support Specialist | Code C1 & PrDP</h3>
-                <p>DUT ICT Finalist specializing in Network Infrastructure and Systems Security. Fully mobile and ready for field-based technical deployment.</p>
+                <p>DUT ICT Finalist specializing in Network Infrastructure and Systems Security. Fully mobile and prepared for field-based technical deployment with a professional driving permit[cite: 1, 4, 11].</p>
+                
                 <div class="btn-group">
-                    <a href="mailto:sibonelompanza60@gmail.com" class="btn primary">Hire Me</a>
-                    <a href="#projects" class="btn secondary">View Work</a>
+                    <button class="btn primary" onclick="openModal()">Contact Me Now</button>
+                    <a href="#projects" class="btn secondary">View My Work</a>
                 </div>
             </div>
             <div class="hero-img">
@@ -43,17 +45,17 @@
             <div class="skill-card">
                 <i class="fas fa-network-wired"></i>
                 <h4>Networking</h4>
-                <p>Cisco Switch/Router Config, VPNs, and LAN Design.</p>
+                <p>Expertise in Cisco Switch/Router Configuration, VPNs, and Secure LAN Design[cite: 7, 23].</p>
             </div>
             <div class="skill-card">
                 <i class="fas fa-shield-alt"></i>
                 <h4>Security</h4>
-                <p>Firewall implementation and System Security principles.</p>
+                <p>Implementation of firewall rules, port security, and system security principles[cite: 6, 23].</p>
             </div>
             <div class="skill-card">
-                <i class="fas fa-truck"></i>
+                <i class="fas fa-truck-moving"></i>
                 <h4>Field Operations</h4>
-                <p>Licensed C1 Heavy Vehicle operator with PrDP for site visits.</p>
+                <p>Licensed Code C1 operator with PrDP, ready for on-site hardware support and logistics[cite: 1, 4, 9].</p>
             </div>
         </div>
     </section>
@@ -63,21 +65,46 @@
         <div class="slider">
             <div class="slide-track">
                 <div class="slide"><img src="images/packet-tracer-1.png" alt="Cisco Simulation"></div>
+                <div class="slide"><img src="images/motto-app.png" alt="Motto Marketplace"></div>
                 <div class="slide"><img src="images/packet-tracer-2.png" alt="Network Design"></div>
-                <div class="slide"><img src="images/motto-app.png" alt="Motto Project"></div>
+                <div class="slide"><img src="images/photography-site.png" alt="Photography Project"></div>
                 <div class="slide"><img src="images/packet-tracer-1.png" alt="Cisco Simulation"></div>
-                <div class="slide"><img src="images/packet-tracer-2.png" alt="Network Design"></div>
-                </div>
+                <div class="slide"><img src="images/motto-app.png" alt="Motto Marketplace"></div>
+            </div>
         </div>
     </section>
 
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Let's <span>Connect</span></h2>
+            <p>Direct communication for professional inquiries:</p>
+            <div class="modal-btns">
+                <a href="https://wa.me/27637411528" target="_blank" class="modal-btn whatsapp">
+                    <i class="fab fa-whatsapp"></i> WhatsApp Me
+                </a>
+                <a href="mailto:sibonelompanza60@gmail.com" class="modal-btn email">
+                    <i class="fas fa-envelope"></i> Send Email
+                </a>
+            </div>
+        </div>
+    </div>
+
     <footer id="contact">
-        <p>Connect with me: 063 741 1528 | sibonelompanza60@gmail.com</p>
+        <p>© 2026 Sibonelo Mpanza | 063 741 1528 [cite: 1]</p>
         <div class="socials">
-            <a href="https://www.linkedin.com/in/sibonelo-mpanza-724328360">LinkedIn</a>
-            <a href="https://nellow101.github.io/nellow-photography/">Photography</a>
+            <a href="https://www.linkedin.com/in/sibonelo-mpanza-724328360"><i class="fab fa-linkedin"></i></a>
+            <a href="https://nellow101.github.io/nellow-photography/"><i class="fas fa-camera"></i></a>
         </div>
     </footer>
 
+    <script>
+        function openModal() { document.getElementById("contactModal").style.display = "block"; }
+        function closeModal() { document.getElementById("contactModal").style.display = "none"; }
+        window.onclick = function(event) {
+            let modal = document.getElementById("contactModal");
+            if (event.target == modal) { modal.style.display = "none"; }
+        }
+    </script>
 </body>
 </html>
