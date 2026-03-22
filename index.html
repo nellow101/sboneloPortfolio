@@ -26,7 +26,7 @@
                 <div class="badge">Available for Hire</div>
                 <h1>Hi, I'm <span>Sibonelo Mpanza</span></h1>
                 <h3>ICT Support Specialist | Code C1 & PrDP</h3>
-                <p>DUT ICT Finalist specializing in Network Infrastructure and Systems Security. Fully mobile and prepared for field-based technical deployment with a professional driving permit[cite: 1, 4, 11].</p>
+                <p>DUT ICT Finalist specializing in Network Infrastructure and Systems Security. Fully mobile and prepared for field-based technical deployment with a professional driving permit.</p>
                 
                 <div class="btn-group">
                     <button class="btn primary" onclick="openModal()">Contact Me Now</button>
@@ -45,33 +45,65 @@
             <div class="skill-card">
                 <i class="fas fa-network-wired"></i>
                 <h4>Networking</h4>
-                <p>Expertise in Cisco Switch/Router Configuration, VPNs, and Secure LAN Design[cite: 7, 23].</p>
+                <p>Expertise in Cisco Switch/Router Configuration, Static Routing, and Secure LAN Design.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-headset"></i>
+                <h4>Technical Support</h4>
+                <p>End-to-end Helpdesk support, hardware troubleshooting, and OS deployment for enterprise users.</p>
             </div>
             <div class="skill-card">
                 <i class="fas fa-shield-alt"></i>
                 <h4>Security</h4>
-                <p>Implementation of firewall rules, port security, and system security principles[cite: 6, 23].</p>
+                <p>Implementation of firewall rules, port security, and basic systems hardening protocols.</p>
             </div>
             <div class="skill-card">
                 <i class="fas fa-truck-moving"></i>
                 <h4>Field Operations</h4>
-                <p>Licensed Code C1 operator with PrDP, ready for on-site hardware support and logistics[cite: 1, 4, 9].</p>
+                <p>Licensed Code C1 operator with PrDP, ready for on-site hardware support and regional logistics.</p>
             </div>
         </div>
     </section>
 
     <section id="projects">
         <h2 class="section-title">Practical <span>Simulations</span></h2>
-        <div class="slider">
-            <div class="slide-track">
-                <div class="slide"><img src="images/pocket1.png" alt="Cisco Simulation"></div>
-                <div class="slide"><img src="images/packet2.png" alt="Cisco Simulation"></div>
-                <div class="slide"><img src="images/packet3.png" alt="Network Design"></div>
-                <div class="slide"><img src="images/packet4.png" alt="Network Design"></div>
-                
+        <div class="project-slider-container">
+            <div class="main-slider">
+                <div class="mySlides fade">
+                    <img src="images/pocket1.png" alt="Static Routing & WAN Configuration" onclick="expandImage(this)">
+                    <div class="caption">Static Routing & WAN Configuration</div>
+                </div>
+                <div class="mySlides fade">
+                    <img src="images/packet2.png" alt="VLAN Segmentation & Trunking" onclick="expandImage(this)">
+                    <div class="caption">VLAN Segmentation & Trunking</div>
+                </div>
+                <div class="mySlides fade">
+                    <img src="images/packet3.png" alt="Secure Gateway Configuration" onclick="expandImage(this)">
+                    <div class="caption">Secure Gateway Configuration</div>
+                </div>
+                <div class="mySlides fade">
+                    <img src="images/packet4.png" alt="End-to-End Connectivity Test" onclick="expandImage(this)">
+                    <div class="caption">End-to-End Connectivity Test</div>
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span> 
+                <span class="dot" onclick="currentSlide(2)"></span> 
+                <span class="dot" onclick="currentSlide(3)"></span> 
+                <span class="dot" onclick="currentSlide(4)"></span> 
             </div>
         </div>
     </section>
+
+    <div id="imageModal" class="modal" onclick="this.style.display='none'">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="expandedImg">
+        <div id="imgCaption"></div>
+    </div>
 
     <div id="contactModal" class="modal">
         <div class="modal-content">
@@ -90,7 +122,7 @@
     </div>
 
     <footer id="contact">
-        <p>© 2026 Sibonelo Mpanza | 063 741 1528 [cite: 1]</p>
+        <p>© 2026 Sibonelo Mpanza | 063 741 1528</p>
         <div class="socials">
             <a href="https://www.linkedin.com/in/sibonelo-mpanza-724328360"><i class="fab fa-linkedin"></i></a>
             <a href="https://nellow101.github.io/nellow-photography/"><i class="fas fa-camera"></i></a>
@@ -98,11 +130,72 @@
     </footer>
 
     <script>
+        // MODAL LOGIC
         function openModal() { document.getElementById("contactModal").style.display = "block"; }
         function closeModal() { document.getElementById("contactModal").style.display = "none"; }
+        
+        // SLIDER LOGIC
+        let slideIndex = 0;
+        let slideTimer;
+        
+        showSlides();
+
+        function plusSlides(n) {
+            clearTimeout(slideTimer);
+            showSlidesManual(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            clearTimeout(slideTimer);
+            showSlidesManual(slideIndex = n);
+        }
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+            slideTimer = setTimeout(showSlides, 3000); 
+        }
+
+        function showSlidesManual(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
+
+        // LIGHTBOX LOGIC
+        function expandImage(imgs) {
+            var expandImg = document.getElementById("expandedImg");
+            var imgText = document.getElementById("imgCaption");
+            var modal = document.getElementById("imageModal");
+            modal.style.display = "block";
+            expandImg.src = imgs.src;
+            imgText.innerHTML = imgs.alt;
+        }
+
         window.onclick = function(event) {
-            let modal = document.getElementById("contactModal");
-            if (event.target == modal) { modal.style.display = "none"; }
+            let contactModal = document.getElementById("contactModal");
+            if (event.target == contactModal) { contactModal.style.display = "none"; }
         }
     </script>
 </body>
