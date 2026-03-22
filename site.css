@@ -12,67 +12,92 @@ body { background-color: var(--bg); color: var(--text); overflow-x: hidden; }
 /* Navigation */
 nav {
     display: flex; justify-content: space-between; align-items: center;
-    padding: 20px 8%; background: rgba(0, 0, 0, 0.9);
+    padding: 20px 8%; background: rgba(0, 0, 0, 0.95);
     position: fixed; width: 100%; z-index: 1000; border-bottom: 1px solid #222;
 }
-.logo { font-size: 1.5rem; font-weight: 600; letter-spacing: 2px; }
+.logo { font-size: 1.5rem; font-weight: 600; letter-spacing: 1px; }
 .logo span { color: var(--primary); }
 nav ul { display: flex; list-style: none; }
 nav ul li { margin-left: 30px; }
 nav ul li a { color: var(--text); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
 nav ul li a:hover { color: var(--primary); }
 
-/* Hero */
+/* Hero Section */
 header { min-height: 100vh; display: flex; align-items: center; padding: 120px 10% 60px 10%; }
 .hero-content { display: flex; align-items: center; gap: 60px; flex-wrap: wrap; justify-content: center; }
 .hero-text { flex: 1; min-width: 300px; }
-.hero-img img { width: 100%; max-width: 380px; border-radius: 30px; border: 2px solid #222; box-shadow: 0 0 40px rgba(255, 102, 0, 0.2); }
+.badge { background: rgba(255, 102, 0, 0.1); color: var(--primary); padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; border: 1px solid var(--primary); display: inline-block; margin-bottom: 15px; }
+.hero-text h1 span { color: var(--primary); }
+.hero-text p { color: var(--subtext); margin: 20px 0; max-width: 500px; line-height: 1.6; }
+.hero-img img { width: 100%; max-width: 350px; border-radius: 30px; border: 2px solid #222; box-shadow: 0 0 40px rgba(255, 102, 0, 0.2); }
 
 /* Buttons */
 .btn { padding: 12px 30px; border-radius: 8px; font-weight: 600; cursor: pointer; transition: 0.3s; border: none; font-size: 1rem; }
 .primary { background: var(--primary); color: white; }
 .secondary { background: transparent; border: 2px solid var(--primary); color: var(--primary); margin-left: 15px; text-decoration: none; display: inline-block; }
+.btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255, 102, 0, 0.3); }
 
-/* Skills */
+/* Skills Grid */
 #skills { padding: 80px 10%; }
-.section-title { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
+.section-title { text-align: center; font-size: 2.2rem; margin-bottom: 50px; }
 .section-title span { color: var(--primary); }
 .skills-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
 .skill-card { background: var(--card-bg); padding: 40px 20px; border-radius: 20px; text-align: center; border: 1px solid #222; transition: 0.3s; }
 .skill-card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
-.skill-card:hover { border-color: var(--primary); transform: translateY(-5px); }
 
-/* PROJECT SLIDER - Bulletproof Fix */
+/* Slider Section */
 #projects { padding: 80px 10%; background: #080808; text-align: center; }
-.project-slider-wrapper { max-width: 750px; margin: auto; }
+.project-slider-wrapper { max-width: 800px; margin: auto; }
 .project-slider-container { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #111; border-radius: 20px; overflow: hidden; border: 1px solid #333; }
-
-.mySlides { display: none; width: 100%; height: 100%; }
 .mySlides img { width: 100%; height: 100%; object-fit: contain; cursor: pointer; }
+.caption { background: rgba(0,0,0,0.8); color: white; padding: 12px; position: absolute; bottom: 0; width: 100%; font-size: 0.9rem; }
 
-.caption { background: rgba(0,0,0,0.8); color: white; padding: 10px; position: absolute; bottom: 0; width: 100%; font-size: 0.9rem; }
-
-/* Arrows */
-.prev, .next { cursor: pointer; position: absolute; top: 50%; transform: translateY(-50%); padding: 16px; color: var(--primary); font-weight: bold; font-size: 24px; transition: 0.3s; user-select: none; z-index: 5; }
-.next { right: 0; }
-.prev { left: 0; }
-
-/* Dots */
-.dot-container { margin-top: 20px; }
-.dot { cursor: pointer; height: 10px; width: 10px; margin: 0 5px; background-color: #333; border-radius: 50%; display: inline-block; transition: 0.3s; }
-.active, .dot:hover { background-color: var(--primary); width: 25px; border-radius: 5px; }
-
-/* Modals */
-.modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; backdrop-filter: blur(5px); }
-.modal-content { max-width: 90%; max-height: 80vh; border-radius: 15px; border: 1px solid var(--primary); }
-#imageModal .modal-content { background: transparent; border: 2px solid var(--primary); }
-#contactModal .modal-content { background: #151515; padding: 40px; text-align: center; max-width: 400px; }
-
-footer { padding: 40px; text-align: center; border-top: 1px solid #222; }
-.socials a { color: var(--text); font-size: 1.5rem; margin: 0 10px; }
-
-/* Mobile */
-@media (max-width: 768px) {
-    .project-slider-container { aspect-ratio: 4 / 3; }
-    .hero-content { flex-direction: column-reverse; text-align: center; }
+/* Modal System - Centering Fix */
+.modal { 
+    display: none; 
+    position: fixed; 
+    z-index: 2000; 
+    left: 0; top: 0; 
+    width: 100%; height: 100%; 
+    background: rgba(0,0,0,0.9); 
+    backdrop-filter: blur(8px);
+    align-items: center; 
+    justify-content: center;
 }
+
+.contact-modal-box { 
+    background: #141414; 
+    padding: 40px; 
+    border-radius: 25px; 
+    width: 90%; 
+    max-width: 400px; 
+    border: 1px solid var(--primary); 
+    text-align: center; 
+    position: relative;
+}
+
+.close { position: absolute; right: 20px; top: 15px; color: white; font-size: 28px; cursor: pointer; }
+.modal-btns { display: flex; flex-direction: column; gap: 15px; margin-top: 25px; }
+
+/* Contact Buttons Style */
+.modal-btn { 
+    padding: 15px; 
+    border-radius: 12px; 
+    text-decoration: none; 
+    color: white; 
+    font-weight: 600; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 10px;
+    transition: 0.3s;
+}
+.whatsapp { background: #25D366; }
+.email { background: var(--primary); }
+.modal-btn:hover { transform: scale(1.02); filter: brightness(1.1); }
+
+/* Footer */
+footer { padding: 50px; text-align: center; border-top: 1px solid #222; font-size: 0.9rem; }
+.socials { margin-top: 15px; }
+.socials a { color: var(--text); font-size: 1.4rem; margin: 0 10px; transition: 0.3s; }
+.socials a:hover { color: var(--primary); }
