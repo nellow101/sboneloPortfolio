@@ -11,12 +11,12 @@
 <body>
 
     <nav>
-        <div class="logo">Nellow<span>Tech &#128156;</span></div>
+        <div class="logo">Nellow<span>Tech 💜</span></div>
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Work</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="javascript:void(0)" onclick="openModal()">Contact</a></li>
         </ul>
     </nav>
 
@@ -83,7 +83,7 @@
                 </div>
                 <div class="mySlides fade">
                     <img src="images/packet4.png" alt="Remote Branch Configuration" onclick="expandImage(this)">
-                    <div class="caption">Remove Branch Configuration</div>
+                    <div class="caption">Remote Branch Configuration</div>
                 </div>
 
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -106,7 +106,7 @@
     </div>
 
     <div id="contactModal" class="modal">
-        <div class="modal-content">
+        <div class="modal-content contact-modal-box">
             <span class="close" onclick="closeModal()">&times;</span>
             <h2>Let's <span>Connect</span></h2>
             <p>Direct communication for professional inquiries:</p>
@@ -122,7 +122,7 @@
     </div>
 
     <footer>
-        <p>© 2026 Sibonelo Mpanza | 063 741 1528 | NellowTech &#128156;</p>
+        <p>© 2026 Sibonelo Mpanza | 063 741 1528 | NellowTech 💜</p>
         <div class="socials">
             <a href="https://www.linkedin.com/in/sibonelo-mpanza-724328360"><i class="fab fa-linkedin"></i></a>
             <a href="https://nellow101.github.io/nellow-photography/"><i class="fas fa-camera"></i></a>
@@ -130,7 +130,7 @@
     </footer>
 
     <script>
-        function openModal() { document.getElementById("contactModal").style.display = "block"; }
+        function openModal() { document.getElementById("contactModal").style.display = "flex"; }
         function closeModal() { document.getElementById("contactModal").style.display = "none"; }
         
         let slideIndex = 1;
@@ -159,9 +159,11 @@
             for (i = 0; i < dots.length; i++) {
                 dots[i].className = dots[i].className.replace(" active", "");
             }
-            slides[slideIndex-1].style.display = "block";  
-            dots[slideIndex-1].className += " active";
-            slideTimer = setTimeout(() => { plusSlides(1); }, 3000);
+            if(slides[slideIndex-1]) {
+                slides[slideIndex-1].style.display = "block";  
+                dots[slideIndex-1].className += " active";
+            }
+            slideTimer = setTimeout(() => { plusSlides(1); }, 4000);
         }
 
         function expandImage(imgs) {
@@ -175,7 +177,7 @@
 
         window.onclick = function(event) {
             let contactModal = document.getElementById("contactModal");
-            if (event.target == contactModal) { contactModal.style.display = "none"; }
+            if (event.target == contactModal) { closeModal(); }
         }
     </script>
 </body>
