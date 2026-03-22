@@ -26,7 +26,7 @@
                 <div class="badge">Available for Hire</div>
                 <h1>Hi, I'm <span>Sibonelo Mpanza</span></h1>
                 <h3>ICT Support Specialist | Code C1 & PrDP</h3>
-                <p>DUT ICT Finalist specializing in Network Infrastructure and Systems Security. Fully mobile and prepared for field-based technical deployment with a professional driving permit.</p>
+                <p>DUT ICT Finalist specializing in Network Infrastructure and Systems Security. Fully mobile and prepared for technical deployment across South Africa.</p>
                 
                 <div class="btn-group">
                     <button class="btn primary" onclick="openModal()">Contact Me Now</button>
@@ -67,8 +67,8 @@
 
     <section id="projects">
         <h2 class="section-title">Practical <span>Simulations</span></h2>
-        <div class="project-slider-container">
-            <div class="main-slider">
+        <div class="project-slider-wrapper">
+            <div class="project-slider-container">
                 <div class="mySlides fade">
                     <img src="images/pocket1.png" alt="Static Routing & WAN Configuration" onclick="expandImage(this)">
                     <div class="caption">Static Routing & WAN Configuration</div>
@@ -89,8 +89,8 @@
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
             </div>
-            <br>
-            <div style="text-align:center">
+            
+            <div class="dot-container">
                 <span class="dot" onclick="currentSlide(1)"></span> 
                 <span class="dot" onclick="currentSlide(2)"></span> 
                 <span class="dot" onclick="currentSlide(3)"></span> 
@@ -121,7 +121,7 @@
         </div>
     </div>
 
-    <footer id="contact">
+    <footer>
         <p>© 2026 Sibonelo Mpanza | 063 741 1528</p>
         <div class="socials">
             <a href="https://www.linkedin.com/in/sibonelo-mpanza-724328360"><i class="fab fa-linkedin"></i></a>
@@ -130,65 +130,45 @@
     </footer>
 
     <script>
-        // MODAL LOGIC
         function openModal() { document.getElementById("contactModal").style.display = "block"; }
         function closeModal() { document.getElementById("contactModal").style.display = "none"; }
         
-        // SLIDER LOGIC
-        let slideIndex = 0;
+        let slideIndex = 1;
         let slideTimer;
-        
-        showSlides();
+        showSlides(slideIndex);
 
         function plusSlides(n) {
             clearTimeout(slideTimer);
-            showSlidesManual(slideIndex += n);
+            showSlides(slideIndex += n);
         }
 
         function currentSlide(n) {
             clearTimeout(slideTimer);
-            showSlidesManual(slideIndex = n);
+            showSlides(slideIndex = n);
         }
 
-        function showSlides() {
+        function showSlides(n) {
             let i;
             let slides = document.getElementsByClassName("mySlides");
             let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
             for (i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";  
             }
-            slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}    
             for (i = 0; i < dots.length; i++) {
                 dots[i].className = dots[i].className.replace(" active", "");
             }
             slides[slideIndex-1].style.display = "block";  
             dots[slideIndex-1].className += " active";
-            slideTimer = setTimeout(showSlides, 3000); 
+            slideTimer = setTimeout(() => { plusSlides(1); }, 3000);
         }
 
-        function showSlidesManual(n) {
-            let i;
-            let slides = document.getElementsByClassName("mySlides");
-            let dots = document.getElementsByClassName("dot");
-            if (n > slides.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex-1].style.display = "block";
-            dots[slideIndex-1].className += " active";
-        }
-
-        // LIGHTBOX LOGIC
         function expandImage(imgs) {
             var expandImg = document.getElementById("expandedImg");
             var imgText = document.getElementById("imgCaption");
             var modal = document.getElementById("imageModal");
-            modal.style.display = "block";
+            modal.style.display = "flex";
             expandImg.src = imgs.src;
             imgText.innerHTML = imgs.alt;
         }
