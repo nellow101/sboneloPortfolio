@@ -16,6 +16,7 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Work</a></li>
+            <li><a href="#certifications">Certs</a></li>
             <li><a href="#contact-footer">Contact</a></li>
         </ul>
     </nav>
@@ -99,6 +100,55 @@
         </div>
     </section>
 
+    <section id="certifications">
+        <h2 class="section-title">Professional <span>Certifications</span></h2>
+        <div class="project-slider-wrapper">
+            <div class="project-slider-container">
+                <div class="certSlides fade">
+                    <img src="images/cert1.png" alt="Cisco Intro to Cybersecurity" onclick="expandImage(this)">
+                    <div class="caption">Cisco Intro to Cybersecurity</div>
+                </div>
+                <div class="certSlides fade">
+                    <img src="images/cert2.png" alt="Cisco NDG Linux Essentials" onclick="expandImage(this)">
+                    <div class="caption">Cisco NDG Linux Essentials</div>
+                </div>
+                <div class="certSlides fade">
+                    <img src="images/cert3.png" alt="Cisco Operating Systems Basics" onclick="expandImage(this)">
+                    <div class="caption">Cisco Operating Systems Basics</div>
+                </div>
+                <div class="certSlides fade">
+                    <img src="images/cert4.png" alt="Getting Started with Cisco Packet Tracer" onclick="expandImage(this)">
+                    <div class="caption">Cisco Packet Tracer Certification</div>
+                </div>
+                <div class="certSlides fade">
+                    <img src="images/cert5.png" alt="IBM Cyber Fundamentals" onclick="expandImage(this)">
+                    <div class="caption">IBM Cyber Fundamentals</div>
+                </div>
+                <div class="certSlides fade">
+                    <img src="images/cert6.png" alt="Introduction to Modern AI" onclick="expandImage(this)">
+                    <div class="caption">Introduction to Modern AI</div>
+                </div>
+                <div class="certSlides fade">
+                    <img src="images/cert7.png" alt="SimpliLearn AI Beginners Guide" onclick="expandImage(this)">
+                    <div class="caption">SimpliLearn AI Guide</div>
+                </div>
+
+                <a class="prev" onclick="plusCertSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusCertSlides(1)">&#10095;</a>
+            </div>
+            
+            <div class="dot-container">
+                <span class="cert-dot" onclick="currentCertSlide(1)"></span> 
+                <span class="cert-dot" onclick="currentCertSlide(2)"></span> 
+                <span class="cert-dot" onclick="currentCertSlide(3)"></span> 
+                <span class="cert-dot" onclick="currentCertSlide(4)"></span> 
+                <span class="cert-dot" onclick="currentCertSlide(5)"></span> 
+                <span class="cert-dot" onclick="currentCertSlide(6)"></span> 
+                <span class="cert-dot" onclick="currentCertSlide(7)"></span> 
+            </div>
+        </div>
+    </section>
+
     <div id="imageModal" class="modal" onclick="this.style.display='none'">
         <span class="close">&times;</span>
         <img class="modal-content" id="expandedImg">
@@ -134,36 +184,39 @@
         function closeModal() { document.getElementById("contactModal").style.display = "none"; }
         
         let slideIndex = 1;
-        let slideTimer;
         showSlides(slideIndex);
-
-        function plusSlides(n) {
-            clearTimeout(slideTimer);
-            showSlides(slideIndex += n);
-        }
-
-        function currentSlide(n) {
-            clearTimeout(slideTimer);
-            showSlides(slideIndex = n);
-        }
-
+        function plusSlides(n) { showSlides(slideIndex += n); }
+        function currentSlide(n) { showSlides(slideIndex = n); }
         function showSlides(n) {
             let i;
             let slides = document.getElementsByClassName("mySlides");
             let dots = document.getElementsByClassName("dot");
             if (n > slides.length) {slideIndex = 1}    
             if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
+            for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+            for (i = 0; i < dots.length; i++) { dots[i].className = dots[i].className.replace(" active", ""); }
             if(slides[slideIndex-1]) {
                 slides[slideIndex-1].style.display = "block";  
                 dots[slideIndex-1].className += " active";
             }
-            slideTimer = setTimeout(() => { plusSlides(1); }, 4000);
+        }
+
+        let certSlideIndex = 1;
+        showCertSlides(certSlideIndex);
+        function plusCertSlides(n) { showCertSlides(certSlideIndex += n); }
+        function currentCertSlide(n) { showCertSlides(certSlideIndex = n); }
+        function showCertSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("certSlides");
+            let dots = document.getElementsByClassName("cert-dot");
+            if (n > slides.length) {certSlideIndex = 1}    
+            if (n < 1) {certSlideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+            for (i = 0; i < dots.length; i++) { dots[i].className = dots[i].className.replace(" active", ""); }
+            if(slides[certSlideIndex-1]) {
+                slides[certSlideIndex-1].style.display = "block";  
+                dots[certSlideIndex-1].className += " active";
+            }
         }
 
         function expandImage(imgs) {
