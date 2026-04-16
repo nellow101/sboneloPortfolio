@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sibonelo Mpanza | ICT Support Specialist</title>
+    <title>Sibonelo Mpanza | IT Support & Systems Specialist</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="site.css">
@@ -24,67 +24,84 @@
     <header id="home">
         <div class="hero-content">
             <div class="hero-text">
-                <div class="badge">Available for Hire</div>
+                <div class="badge">Available for Immediate Hire</div>
                 <h1>Hi, I'm <span>Sibonelo Mpanza</span></h1>
-                <h3>ICT Support Specialist | Code C1 & PrDP</h3>
-                <p>DUT ICT Finalist specializing in Network Infrastructure and Systems Security. Fully mobile and prepared for technical deployment across South Africa.</p>
+                <h3>IT Support Specialist | Systems Administrator | Code C1 & PrDP</h3>
+                <p>Third-year ICT specialist, specializing in Cloud Infrastructure, Identity Management (AD), and Enterprise Support. Fully mobile and prepared for technical deployment, hardware maintenance, and user support across South Africa.</p>
                 
                 <div class="btn-group">
                     <button class="btn primary" onclick="openModal()">Contact Me Now</button>
-                    <a href="#projects" class="btn secondary">View My Work</a>
+                    <a href="#projects" class="btn secondary">View Technical Labs</a>
                 </div>
             </div>
             <div class="hero-img">
-                <img src="nellowPic.jpeg" alt="Sibonelo Mpanza">
+                <img src="profilePic.jpeg" alt="Sibonelo Mpanza">
             </div>
         </div>
     </header>
 
     <section id="skills">
-        <h2 class="section-title">Technical <span>Expertise</span></h2>
+        <h2 class="section-title">Technical <span>Core Competencies</span></h2>
         <div class="skills-container">
             <div class="skill-card">
+                <i class="fas fa-server"></i>
+                <h4>Systems Administration</h4>
+                <p>Managing Windows Server environments, Active Directory (AD DS), Group Policy, and User Access Control.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-cloud"></i>
+                <h4>Cloud & SaaS</h4>
+                <p>Experience with Azure IaaS and Microsoft 365 administration, including license management and MFA security.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-tools"></i>
+                <h4>Hardware & Desktop</h4>
+                <p>Full lifecycle support for hardware diagnostics, peripheral troubleshooting, and OS deployment (Windows/Linux).</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-ticket-alt"></i>
+                <h4>ITSM & Ticketing</h4>
+                <p>Proficient in incident management and documentation using ITIL standards to meet business SLAs.</p>
+            </div>
+            <div class="skill-card">
                 <i class="fas fa-network-wired"></i>
-                <h4>Networking</h4>
-                <p>Expertise in Cisco Switch/Router Configuration, Static Routing, and Secure LAN Design.</p>
-            </div>
-            <div class="skill-card">
-                <i class="fas fa-headset"></i>
-                <h4>Technical Support</h4>
-                <p>End-to-end Helpdesk support, hardware troubleshooting, and OS deployment for enterprise users.</p>
-            </div>
-            <div class="skill-card">
-                <i class="fas fa-shield-alt"></i>
-                <h4>Security</h4>
-                <p>Implementation of firewall rules, port security, and basic systems hardening protocols.</p>
+                <h4>Network Support</h4>
+                <p>Configuring secure LAN/WLAN environments, DHCP/DNS management, and troubleshooting connectivity issues.</p>
             </div>
             <div class="skill-card">
                 <i class="fas fa-truck-moving"></i>
-                <h4>Field Operations</h4>
-                <p>Licensed Code C1 operator with PrDP, ready for on-site hardware support and regional logistics.</p>
+                <h4>Field Logistics</h4>
+                <p>Licensed Code C1 operator with PrDP, capable of transporting and deploying equipment to remote sites.</p>
             </div>
         </div>
     </section>
 
     <section id="projects">
-        <h2 class="section-title">Practical <span>Simulations</span></h2>
+        <h2 class="section-title">Technical <span>Case Studies</span></h2>
         <div class="project-slider-wrapper">
             <div class="project-slider-container">
                 <div class="mySlides fade">
+                    <img src="images/Ticketing_System_Simulation.png" alt="ITSM Ticketing Lifecycle (Trello)" onclick="expandImage(this)">
+                    <div class="caption">ITSM Incident Management: Managing user tickets from intake to resolution.</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="images/AD_OU_Infrastructure.png" alt="Active Directory OU & User Management" onclick="expandImage(this)">
+                    <div class="caption">Directory Services: Configuring OUs, Security Groups, and user permissions.</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="images/Azure_VM_Infrastructure.png" alt="Azure Cloud VM Deployment" onclick="expandImage(this)">
+                    <div class="caption">Cloud Operations: Provisioning and maintaining server instances in Microsoft Azure.</div>
+                </div>
+
+                <div class="mySlides fade">
                     <img src="images/packet1.png" alt="Secure Office Network" onclick="expandImage(this)">
-                    <div class="caption">Secure Office Network</div>
-                </div>
-                <div class="mySlides fade">
-                    <img src="images/packet2.png" alt="Secure Guest WiFi" onclick="expandImage(this)">
-                    <div class="caption">Secure Guest WiFi</div>
-                </div>
-                <div class="mySlides fade">
-                    <img src="images/packet3.png" alt="Pinging End Device" onclick="expandImage(this)">
-                    <div class="caption">Pinging End Device</div>
+                    <div class="caption">Infrastructure: Designing secure LAN environments via Cisco Packet Tracer.</div>
                 </div>
                 <div class="mySlides fade">
                     <img src="images/packet4.png" alt="Remote Branch Configuration" onclick="expandImage(this)">
-                    <div class="caption">Remote Branch Configuration</div>
+                    <div class="caption">Remote Connectivity: Configuring VPNs and branch routing protocols.</div>
                 </div>
 
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -96,142 +113,13 @@
                 <span class="dot" onclick="currentSlide(2)"></span> 
                 <span class="dot" onclick="currentSlide(3)"></span> 
                 <span class="dot" onclick="currentSlide(4)"></span> 
+                <span class="dot" onclick="currentSlide(5)"></span> 
             </div>
         </div>
     </section>
 
     <section id="certifications">
-        <h2 class="section-title">Professional <span>Certifications</span></h2>
-        <div class="project-slider-wrapper">
-            <div class="project-slider-container">
-                <div class="certSlides fade">
-                    <img src="images/cert1.png" alt="Cisco Intro to Cybersecurity" onclick="expandImage(this)">
-                    <div class="caption">Cisco Intro to Cybersecurity</div>
-                </div>
-                <div class="certSlides fade">
-                    <img src="images/cert2.png" alt="Cisco NDG Linux Essentials" onclick="expandImage(this)">
-                    <div class="caption">Cisco NDG Linux Essentials</div>
-                </div>
-                <div class="certSlides fade">
-                    <img src="images/cert3.png" alt="Cisco Operating Systems Basics" onclick="expandImage(this)">
-                    <div class="caption">Cisco Operating Systems Basics</div>
-                </div>
-                <div class="certSlides fade">
-                    <img src="images/cert4.png" alt="Getting Started with Cisco Packet Tracer" onclick="expandImage(this)">
-                    <div class="caption">Cisco Packet Tracer Certification</div>
-                </div>
-                <div class="certSlides fade">
-                    <img src="images/cert5.png" alt="IBM Cyber Fundamentals" onclick="expandImage(this)">
-                    <div class="caption">IBM Cyber Fundamentals</div>
-                </div>
-                <div class="certSlides fade">
-                    <img src="images/cert6.png" alt="Introduction to Modern AI" onclick="expandImage(this)">
-                    <div class="caption">Introduction to Modern AI</div>
-                </div>
-                <div class="certSlides fade">
-                    <img src="images/cert7.png" alt="SimpliLearn AI Beginners Guide" onclick="expandImage(this)">
-                    <div class="caption">SimpliLearn AI Guide</div>
-                </div>
+        </section>
 
-                <a class="prev" onclick="plusCertSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusCertSlides(1)">&#10095;</a>
-            </div>
-            
-            <div class="dot-container">
-                <span class="cert-dot" onclick="currentCertSlide(1)"></span> 
-                <span class="cert-dot" onclick="currentCertSlide(2)"></span> 
-                <span class="cert-dot" onclick="currentCertSlide(3)"></span> 
-                <span class="cert-dot" onclick="currentCertSlide(4)"></span> 
-                <span class="cert-dot" onclick="currentCertSlide(5)"></span> 
-                <span class="cert-dot" onclick="currentCertSlide(6)"></span> 
-                <span class="cert-dot" onclick="currentCertSlide(7)"></span> 
-            </div>
-        </div>
-    </section>
-
-    <div id="imageModal" class="modal" onclick="this.style.display='none'">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="expandedImg">
-        <div id="imgCaption"></div>
-    </div>
-
-    <div id="contactModal" class="modal">
-        <div class="modal-content contact-modal-box">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Let's <span>Connect</span></h2>
-            <p>Direct communication for professional inquiries:</p>
-            <div class="modal-btns">
-                <a href="https://wa.me/27637411528" target="_blank" class="modal-btn whatsapp">
-                    <i class="fab fa-whatsapp"></i> WhatsApp Me
-                </a>
-                <a href="mailto:sibonelompanza60@gmail.com" class="modal-btn email">
-                    <i class="fas fa-envelope"></i> Send Email
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <footer id="contact-footer">
-        <p>© 2026 Sibonelo Mpanza | 063 741 1528 | NellowTech 💜</p>
-        <div class="socials">
-            <a href="https://www.linkedin.com/in/sibonelo-mpanza-724328360"><i class="fab fa-linkedin"></i></a>
-            <a href="https://nellow101.github.io/nellow-photography/"><i class="fas fa-camera"></i></a>
-        </div>
-    </footer>
-
-    <script>
-        function openModal() { document.getElementById("contactModal").style.display = "flex"; }
-        function closeModal() { document.getElementById("contactModal").style.display = "none"; }
-        
-        let slideIndex = 1;
-        showSlides(slideIndex);
-        function plusSlides(n) { showSlides(slideIndex += n); }
-        function currentSlide(n) { showSlides(slideIndex = n); }
-        function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("mySlides");
-            let dots = document.getElementsByClassName("dot");
-            if (n > slides.length) {slideIndex = 1}    
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
-            for (i = 0; i < dots.length; i++) { dots[i].className = dots[i].className.replace(" active", ""); }
-            if(slides[slideIndex-1]) {
-                slides[slideIndex-1].style.display = "block";  
-                dots[slideIndex-1].className += " active";
-            }
-        }
-
-        let certSlideIndex = 1;
-        showCertSlides(certSlideIndex);
-        function plusCertSlides(n) { showCertSlides(certSlideIndex += n); }
-        function currentCertSlide(n) { showCertSlides(certSlideIndex = n); }
-        function showCertSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("certSlides");
-            let dots = document.getElementsByClassName("cert-dot");
-            if (n > slides.length) {certSlideIndex = 1}    
-            if (n < 1) {certSlideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
-            for (i = 0; i < dots.length; i++) { dots[i].className = dots[i].className.replace(" active", ""); }
-            if(slides[certSlideIndex-1]) {
-                slides[certSlideIndex-1].style.display = "block";  
-                dots[certSlideIndex-1].className += " active";
-            }
-        }
-
-        function expandImage(imgs) {
-            var expandImg = document.getElementById("expandedImg");
-            var imgText = document.getElementById("imgCaption");
-            var modal = document.getElementById("imageModal");
-            modal.style.display = "flex";
-            expandImg.src = imgs.src;
-            imgText.innerHTML = imgs.alt;
-        }
-
-        window.onclick = function(event) {
-            let contactModal = document.getElementById("contactModal");
-            if (event.target == contactModal) { closeModal(); }
-        }
-    </script>
-</body>
+    </body>
 </html>
