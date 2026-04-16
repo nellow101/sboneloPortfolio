@@ -51,7 +51,7 @@
             <div class="skill-card">
                 <i class="fas fa-ticket-alt"></i>
                 <h4>ITSM Support</h4>
-                <p>End-to-end helpdesk support and incident management using Trello and ITIL standards.</p>
+                <p>Incident management and helpdesk documentation using Trello and ITIL standards.</p>
             </div>
             <div class="skill-card">
                 <i class="fas fa-cloud"></i>
@@ -70,35 +70,35 @@
         <h2 class="section-title">Technical <span>Case Studies</span></h2>
         <div class="work-grid">
             
-            <div class="work-card" onclick="expandImage('images/ticketing-system-simulation1.png', 'ITSM Incident Management Lifecycle')">
-                <img src="images/ticketing-system-simulation1.png" alt="Ticketing">
-                <div class="work-overlay">
+            <div class="work-card" onclick="expandImage(this.querySelector('img'))">
+                <img src="images/ticketing-system-simulation1.png" alt="ITSM Incident Management Lifecycle">
+                <div class="work-info">
                     <h4>Ticketing System</h4>
-                    <p>Managing support queues and user incidents.</p>
+                    <p>Managing support queues and SLAs.</p>
                 </div>
             </div>
 
-            <div class="work-card" onclick="expandImage('images/AD_OU_Infrastructure.png', 'Active Directory OU & User Management')">
-                <img src="images/AD_OU_Infrastructure.png" alt="AD Infrastructure">
-                <div class="work-overlay">
+            <div class="work-card" onclick="expandImage(this.querySelector('img'))">
+                <img src="images/AD_OU_Infrastructure.png" alt="Active Directory OU & User Management">
+                <div class="work-info">
                     <h4>Active Directory</h4>
-                    <p>Identity and Access Governance simulations.</p>
+                    <p>Identity and Access Governance.</p>
                 </div>
             </div>
 
-            <div class="work-card" onclick="expandImage('images/Azure_VM.png', 'Azure Cloud Infrastructure Deployment')">
-                <img src="images/Azure_VM.png" alt="Azure">
-                <div class="work-overlay">
+            <div class="work-card" onclick="expandImage(this.querySelector('img'))">
+                <img src="images/Azure_VM.png" alt="Azure Cloud Infrastructure Deployment">
+                <div class="work-info">
                     <h4>Azure Cloud</h4>
-                    <p>Deploying and maintaining cloud server instances.</p>
+                    <p>Deploying virtual server instances.</p>
                 </div>
             </div>
 
-            <div class="work-card" onclick="expandImage('images/packet1.png', 'Secure Office Network Architecture')">
-                <img src="images/packet1.png" alt="Networking">
-                <div class="work-overlay">
+            <div class="work-card" onclick="expandImage(this.querySelector('img'))">
+                <img src="images/packet1.png" alt="Secure Office Network Architecture">
+                <div class="work-info">
                     <h4>Networking</h4>
-                    <p>Secure LAN design and routing simulations.</p>
+                    <p>Secure LAN design and routing.</p>
                 </div>
             </div>
 
@@ -107,11 +107,35 @@
 
     <section id="certifications">
         <h2 class="section-title">Professional <span>Certifications</span></h2>
-        <div class="cert-grid">
-            <img src="images/cert1.png" alt="Cisco" onclick="expandImage(this.src, 'Cisco Certification')">
-            <img src="images/cert2.png" alt="Linux" onclick="expandImage(this.src, 'Linux Essentials')">
-            <img src="images/cert5.png" alt="IBM" onclick="expandImage(this.src, 'IBM Cyber Fundamentals')">
-            <img src="images/cert6.png" alt="AI" onclick="expandImage(this.src, 'Modern AI')">
+        <div class="project-slider-wrapper">
+            <div class="project-slider-container">
+                <div class="certSlides fade">
+                    <img src="images/cert1.png" alt="Cisco Intro to Cybersecurity" onclick="expandImage(this)">
+                    <div class="caption">Cisco Intro to Cybersecurity</div>
+                </div>
+                <div class="certSlides fade">
+                    <img src="images/cert2.png" alt="Cisco NDG Linux Essentials" onclick="expandImage(this)">
+                    <div class="caption">Cisco NDG Linux Essentials</div>
+                </div>
+                <div class="certSlides fade">
+                    <img src="images/cert5.png" alt="IBM Cyber Fundamentals" onclick="expandImage(this)">
+                    <div class="caption">IBM Cyber Fundamentals</div>
+                </div>
+                <div class="certSlides fade">
+                    <img src="images/cert6.png" alt="Introduction to Modern AI" onclick="expandImage(this)">
+                    <div class="caption">Introduction to Modern AI</div>
+                </div>
+
+                <a class="prev" onclick="plusCertSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusCertSlides(1)">&#10095;</a>
+            </div>
+            
+            <div class="dot-container">
+                <span class="cert-dot" onclick="currentCertSlide(1)"></span> 
+                <span class="cert-dot" onclick="currentCertSlide(2)"></span> 
+                <span class="cert-dot" onclick="currentCertSlide(3)"></span> 
+                <span class="cert-dot" onclick="currentCertSlide(4)"></span> 
+            </div>
         </div>
     </section>
 
@@ -137,7 +161,7 @@
     </div>
 
     <footer id="contact-footer">
-        <p>© 2026 Sibonelo Mpanza | NellowTech 💜</p>
+        <p>© 2026 Sibonelo Mpanza | 063 741 1528 | NellowTech 💜</p>
         <div class="socials">
             <a href="https://www.linkedin.com/in/sibonelo-mpanza-724328360"><i class="fab fa-linkedin"></i></a>
             <a href="https://nellow101.github.io/nellow-photography/"><i class="fas fa-camera"></i></a>
@@ -148,13 +172,31 @@
         function openModal() { document.getElementById("contactModal").style.display = "flex"; }
         function closeModal() { document.getElementById("contactModal").style.display = "none"; }
         
-        function expandImage(src, caption) {
-            const modal = document.getElementById("imageModal");
-            const expandImg = document.getElementById("expandedImg");
-            const imgText = document.getElementById("imgCaption");
+        let certSlideIndex = 1;
+        showCertSlides(certSlideIndex);
+        function plusCertSlides(n) { showCertSlides(certSlideIndex += n); }
+        function currentCertSlide(n) { showCertSlides(certSlideIndex = n); }
+        function showCertSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("certSlides");
+            let dots = document.getElementsByClassName("cert-dot");
+            if (n > slides.length) {certSlideIndex = 1}    
+            if (n < 1) {certSlideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+            for (i = 0; i < dots.length; i++) { dots[i].className = dots[i].className.replace(" active", ""); }
+            if(slides[certSlideIndex-1]) {
+                slides[certSlideIndex-1].style.display = "block";  
+                dots[certSlideIndex-1].className += " active";
+            }
+        }
+
+        function expandImage(imgs) {
+            var expandImg = document.getElementById("expandedImg");
+            var imgText = document.getElementById("imgCaption");
+            var modal = document.getElementById("imageModal");
             modal.style.display = "flex";
-            expandImg.src = src;
-            imgText.innerHTML = caption;
+            expandImg.src = imgs.src;
+            imgText.innerHTML = imgs.alt;
         }
 
         window.onclick = function(event) {
