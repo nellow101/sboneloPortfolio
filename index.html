@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sibonelo Mpanza | IT Support & Systems Specialist | Code C1 Driver</title>
+    <title>Sibonelo Mpanza | IT Support & Systems Specialist</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="site.css">
@@ -11,7 +11,7 @@
 <body>
 
     <nav>
-        <div class="logo">Nello<span>Tech 💜</span></div>
+        <div class="logo">Nellow<span>Tech 💜</span></div>
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#skills">Skills</a></li>
@@ -24,18 +24,18 @@
     <header id="home">
         <div class="hero-content">
             <div class="hero-text">
-                <div class="badge">Available for Immediate Hire</div>
+                <div class="badge">Available for Hire</div>
                 <h1>Hi, I'm <span>Sibonelo Mpanza</span></h1>
                 <h3>IT Support Specialist | Systems Administrator</h3>
-                <p>Third-year ICT specialist, specializing in Cloud Infrastructure, Identity Management, and Enterprise Support. Licensed Code C1 operator prepared for technical deployment across the world.</p>
+                <p>Third-year ICT student specializing in Cloud Infrastructure, Identity Management, and Enterprise Support. Fully mobile with a Code C1 & PrDP license.</p>
                 
                 <div class="btn-group">
-                    <button class="btn primary" onclick="openContactModal()">Contact Me Now</button>
-                    <a href="#projects" class="btn secondary">View Technical Labs</a>
+                    <button class="btn primary" onclick="openModal()">Contact Me Now</button>
+                    <a href="#projects" class="btn secondary">View My Work</a>
                 </div>
             </div>
             <div class="hero-img">
-                <img src="profilePic.jpeg" alt="Sibonelo Mpanza">
+                <img src="nellowPic.jpeg" alt="Sibonelo Mpanza">
             </div>
         </div>
     </header>
@@ -46,67 +46,59 @@
             <div class="skill-card">
                 <i class="fas fa-server"></i>
                 <h4>Systems Admin</h4>
-                <p>Windows Server, Active Directory (AD DS), and Group Policy Management.</p>
+                <p>Windows Server management, Active Directory (AD DS), and Group Policy implementation.</p>
             </div>
             <div class="skill-card">
                 <i class="fas fa-ticket-alt"></i>
                 <h4>ITSM Support</h4>
-                <p>Incident management and documentation using ITIL standards and Trello.</p>
+                <p>End-to-end helpdesk support and incident management using Trello and ITIL standards.</p>
             </div>
             <div class="skill-card">
                 <i class="fas fa-cloud"></i>
                 <h4>Cloud Ops</h4>
-                <p>Azure VM provisioning, IaaS maintenance, and Microsoft 365 Admin.</p>
+                <p>Azure VM provisioning, infrastructure maintenance, and Microsoft 365 administration.</p>
             </div>
             <div class="skill-card">
                 <i class="fas fa-network-wired"></i>
                 <h4>Networking</h4>
-                <p>Cisco Packet Tracer, LAN/WLAN config, and DHCP/DNS troubleshooting.</p>
+                <p>Cisco Packet Tracer simulation, LAN configuration, and hardware troubleshooting.</p>
             </div>
         </div>
     </section>
 
     <section id="projects">
         <h2 class="section-title">Technical <span>Case Studies</span></h2>
-        <div class="project-grid">
+        <div class="work-grid">
             
-            <div class="work-card" onclick="expandImage('images/ticketing-system-simulation1.png', 'ITSM Incident Management: Managing user tickets via Trello.')">
-                <div class="work-img">
-                    <img src="images/ticketing-system-simulation1.png" alt="Ticketing System">
-                </div>
-                <div class="work-info">
-                    <h4>ITSM & Ticketing</h4>
-                    <p>Simulating enterprise helpdesk workflows and SLA compliance.</p>
+            <div class="work-card" onclick="expandImage('images/ticketing-system-simulation1.png', 'ITSM Incident Management Lifecycle')">
+                <img src="images/ticketing-system-simulation1.png" alt="Ticketing">
+                <div class="work-overlay">
+                    <h4>Ticketing System</h4>
+                    <p>Managing support queues and user incidents.</p>
                 </div>
             </div>
 
-            <div class="work-card" onclick="expandImage('images/AD_OU_Infrastructure.png', 'Active Directory Services: Configuring Security Groups and OUs.')">
-                <div class="work-img">
-                    <img src="images/AD_OU_Infrastructure.png" alt="Active Directory">
-                </div>
-                <div class="work-info">
-                    <h4>Identity Management</h4>
-                    <p>Deploying AD DS and managing user permissions in a hybrid environment.</p>
+            <div class="work-card" onclick="expandImage('images/AD_OU_Infrastructure.png', 'Active Directory OU & User Management')">
+                <img src="images/AD_OU_Infrastructure.png" alt="AD Infrastructure">
+                <div class="work-overlay">
+                    <h4>Active Directory</h4>
+                    <p>Identity and Access Governance simulations.</p>
                 </div>
             </div>
 
-            <div class="work-card" onclick="expandImage('images/Azure_VM.png', 'Azure Operations: Deploying and managing Windows Server instances.')">
-                <div class="work-img">
-                    <img src="images/Azure_VM.png" alt="Azure VM">
-                </div>
-                <div class="work-info">
-                    <h4>Cloud Infrastructure</h4>
-                    <p>Provisioning Virtual Machines and configuring network security groups.</p>
+            <div class="work-card" onclick="expandImage('images/Azure_VM.png', 'Azure Cloud Infrastructure Deployment')">
+                <img src="images/Azure_VM.png" alt="Azure">
+                <div class="work-overlay">
+                    <h4>Azure Cloud</h4>
+                    <p>Deploying and maintaining cloud server instances.</p>
                 </div>
             </div>
 
-            <div class="work-card" onclick="expandImage('images/packet1.png', 'Network Design: Secure Office LAN with VLAN implementation.')">
-                <div class="work-img">
-                    <img src="images/packet1.png" alt="Packet Tracer">
-                </div>
-                <div class="work-info">
-                    <h4>Network Architecture</h4>
-                    <p>Designing secure, scalable enterprise networks using Cisco Packet Tracer.</p>
+            <div class="work-card" onclick="expandImage('images/packet1.png', 'Secure Office Network Architecture')">
+                <img src="images/packet1.png" alt="Networking">
+                <div class="work-overlay">
+                    <h4>Networking</h4>
+                    <p>Secure LAN design and routing simulations.</p>
                 </div>
             </div>
 
@@ -114,24 +106,24 @@
     </section>
 
     <section id="certifications">
-        <h2 class="section-title">Professional <span>Certs</span></h2>
+        <h2 class="section-title">Professional <span>Certifications</span></h2>
         <div class="cert-grid">
-            <img src="images/cert1.png" onclick="expandImage(this.src, 'Cisco Cybersecurity')" alt="Cert">
-            <img src="images/cert2.png" onclick="expandImage(this.src, 'Linux Essentials')" alt="Cert">
-            <img src="images/cert3.png" onclick="expandImage(this.src, 'OS Basics')" alt="Cert">
-            <img src="images/cert5.png" onclick="expandImage(this.src, 'IBM Cyber Fundamentals')" alt="Cert">
+            <img src="images/cert1.png" alt="Cisco" onclick="expandImage(this.src, 'Cisco Certification')">
+            <img src="images/cert2.png" alt="Linux" onclick="expandImage(this.src, 'Linux Essentials')">
+            <img src="images/cert5.png" alt="IBM" onclick="expandImage(this.src, 'IBM Cyber Fundamentals')">
+            <img src="images/cert6.png" alt="AI" onclick="expandImage(this.src, 'Modern AI')">
         </div>
     </section>
 
-    <div id="imageModal" class="modal" onclick="closeImageModal()">
-        <span class="close-modal">&times;</span>
+    <div id="imageModal" class="modal" onclick="this.style.display='none'">
+        <span class="close">&times;</span>
         <img class="modal-content" id="expandedImg">
         <div id="imgCaption"></div>
     </div>
 
     <div id="contactModal" class="modal">
         <div class="modal-content contact-modal-box">
-            <span class="close-modal" onclick="closeContactModal()">&times;</span>
+            <span class="close" onclick="closeModal()">&times;</span>
             <h2>Let's <span>Connect</span></h2>
             <div class="modal-btns">
                 <a href="https://wa.me/27637411528" target="_blank" class="modal-btn whatsapp">
@@ -153,21 +145,21 @@
     </footer>
 
     <script>
-        function openContactModal() { document.getElementById("contactModal").style.display = "flex"; }
-        function closeContactModal() { document.getElementById("contactModal").style.display = "none"; }
-
+        function openModal() { document.getElementById("contactModal").style.display = "flex"; }
+        function closeModal() { document.getElementById("contactModal").style.display = "none"; }
+        
         function expandImage(src, caption) {
-            document.getElementById("imageModal").style.display = "flex";
-            document.getElementById("expandedImg").src = src;
-            document.getElementById("imgCaption").innerText = caption;
+            const modal = document.getElementById("imageModal");
+            const expandImg = document.getElementById("expandedImg");
+            const imgText = document.getElementById("imgCaption");
+            modal.style.display = "flex";
+            expandImg.src = src;
+            imgText.innerHTML = caption;
         }
 
-        function closeImageModal() { document.getElementById("imageModal").style.display = "none"; }
-
         window.onclick = function(event) {
-            if (event.target.className === 'modal') {
-                event.target.style.display = "none";
-            }
+            let contactModal = document.getElementById("contactModal");
+            if (event.target == contactModal) { closeModal(); }
         }
     </script>
 </body>
