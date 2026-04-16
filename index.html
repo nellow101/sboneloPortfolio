@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sibonelo Mpanza | IT Support & Systems Specialist</title>
+    <title>Sibonelo Mpanza | IT Support & Systems Specialist | Code C1 Driver</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="site.css">
@@ -11,7 +11,7 @@
 <body>
 
     <nav>
-        <div class="logo">Nellow<span>Tech 💜</span></div>
+        <div class="logo">Nello<span>Tech 💜</span></div>
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#skills">Skills</a></li>
@@ -26,11 +26,11 @@
             <div class="hero-text">
                 <div class="badge">Available for Immediate Hire</div>
                 <h1>Hi, I'm <span>Sibonelo Mpanza</span></h1>
-                <h3>IT Support Specialist | Systems Administrator | Code C1 & PrDP</h3>
-                <p>Third-year ICT specialist, specializing in Cloud Infrastructure, Identity Management (AD), and Enterprise Support. Fully mobile and prepared for technical deployment, hardware maintenance, and user support across South Africa.</p>
+                <h3>IT Support Specialist | Systems Administrator</h3>
+                <p>Third-year ICT specialist, specializing in Cloud Infrastructure, Identity Management, and Enterprise Support. Licensed Code C1 operator prepared for technical deployment across the world.</p>
                 
                 <div class="btn-group">
-                    <button class="btn primary" onclick="openModal()">Contact Me Now</button>
+                    <button class="btn primary" onclick="openContactModal()">Contact Me Now</button>
                     <a href="#projects" class="btn secondary">View Technical Labs</a>
                 </div>
             </div>
@@ -41,85 +41,134 @@
     </header>
 
     <section id="skills">
-        <h2 class="section-title">Technical <span>Core Competencies</span></h2>
+        <h2 class="section-title">Technical <span>Expertise</span></h2>
         <div class="skills-container">
             <div class="skill-card">
                 <i class="fas fa-server"></i>
-                <h4>Systems Administration</h4>
-                <p>Managing Windows Server environments, Active Directory (AD DS), Group Policy, and User Access Control.</p>
-            </div>
-            <div class="skill-card">
-                <i class="fas fa-cloud"></i>
-                <h4>Cloud & SaaS</h4>
-                <p>Experience with Azure IaaS and Microsoft 365 administration, including license management and MFA security.</p>
-            </div>
-            <div class="skill-card">
-                <i class="fas fa-tools"></i>
-                <h4>Hardware & Desktop</h4>
-                <p>Full lifecycle support for hardware diagnostics, peripheral troubleshooting, and OS deployment (Windows/Linux).</p>
+                <h4>Systems Admin</h4>
+                <p>Windows Server, Active Directory (AD DS), and Group Policy Management.</p>
             </div>
             <div class="skill-card">
                 <i class="fas fa-ticket-alt"></i>
-                <h4>ITSM & Ticketing</h4>
-                <p>Proficient in incident management and documentation using ITIL standards to meet business SLAs.</p>
+                <h4>ITSM Support</h4>
+                <p>Incident management and documentation using ITIL standards and Trello.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-cloud"></i>
+                <h4>Cloud Ops</h4>
+                <p>Azure VM provisioning, IaaS maintenance, and Microsoft 365 Admin.</p>
             </div>
             <div class="skill-card">
                 <i class="fas fa-network-wired"></i>
-                <h4>Network Support</h4>
-                <p>Configuring secure LAN/WLAN environments, DHCP/DNS management, and troubleshooting connectivity issues.</p>
-            </div>
-            <div class="skill-card">
-                <i class="fas fa-truck-moving"></i>
-                <h4>Field Logistics</h4>
-                <p>Licensed Code C1 operator with PrDP, capable of transporting and deploying equipment to remote sites.</p>
+                <h4>Networking</h4>
+                <p>Cisco Packet Tracer, LAN/WLAN config, and DHCP/DNS troubleshooting.</p>
             </div>
         </div>
     </section>
 
     <section id="projects">
         <h2 class="section-title">Technical <span>Case Studies</span></h2>
-        <div class="project-slider-wrapper">
-            <div class="project-slider-container">
-                <div class="mySlides fade">
-                    <img src="images/Ticketing_System_Simulation.png" alt="ITSM Ticketing Lifecycle (Trello)" onclick="expandImage(this)">
-                    <div class="caption">ITSM Incident Management: Managing user tickets from intake to resolution.</div>
-                </div>
-
-                <div class="mySlides fade">
-                    <img src="images/AD_OU_Infrastructure.png" alt="Active Directory OU & User Management" onclick="expandImage(this)">
-                    <div class="caption">Directory Services: Configuring OUs, Security Groups, and user permissions.</div>
-                </div>
-
-                <div class="mySlides fade">
-                    <img src="images/Azure_VM_Infrastructure.png" alt="Azure Cloud VM Deployment" onclick="expandImage(this)">
-                    <div class="caption">Cloud Operations: Provisioning and maintaining server instances in Microsoft Azure.</div>
-                </div>
-
-                <div class="mySlides fade">
-                    <img src="images/packet1.png" alt="Secure Office Network" onclick="expandImage(this)">
-                    <div class="caption">Infrastructure: Designing secure LAN environments via Cisco Packet Tracer.</div>
-                </div>
-                <div class="mySlides fade">
-                    <img src="images/packet4.png" alt="Remote Branch Configuration" onclick="expandImage(this)">
-                    <div class="caption">Remote Connectivity: Configuring VPNs and branch routing protocols.</div>
-                </div>
-
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-            </div>
+        <div class="project-grid">
             
-            <div class="dot-container">
-                <span class="dot" onclick="currentSlide(1)"></span> 
-                <span class="dot" onclick="currentSlide(2)"></span> 
-                <span class="dot" onclick="currentSlide(3)"></span> 
-                <span class="dot" onclick="currentSlide(4)"></span> 
-                <span class="dot" onclick="currentSlide(5)"></span> 
+            <div class="work-card" onclick="expandImage('images/ticketing-system-simulation1.png', 'ITSM Incident Management: Managing user tickets via Trello.')">
+                <div class="work-img">
+                    <img src="images/ticketing-system-simulation1.png" alt="Ticketing System">
+                </div>
+                <div class="work-info">
+                    <h4>ITSM & Ticketing</h4>
+                    <p>Simulating enterprise helpdesk workflows and SLA compliance.</p>
+                </div>
             </div>
+
+            <div class="work-card" onclick="expandImage('images/AD_OU_Infrastructure.png', 'Active Directory Services: Configuring Security Groups and OUs.')">
+                <div class="work-img">
+                    <img src="images/AD_OU_Infrastructure.png" alt="Active Directory">
+                </div>
+                <div class="work-info">
+                    <h4>Identity Management</h4>
+                    <p>Deploying AD DS and managing user permissions in a hybrid environment.</p>
+                </div>
+            </div>
+
+            <div class="work-card" onclick="expandImage('images/Azure_VM.png', 'Azure Operations: Deploying and managing Windows Server instances.')">
+                <div class="work-img">
+                    <img src="images/Azure_VM.png" alt="Azure VM">
+                </div>
+                <div class="work-info">
+                    <h4>Cloud Infrastructure</h4>
+                    <p>Provisioning Virtual Machines and configuring network security groups.</p>
+                </div>
+            </div>
+
+            <div class="work-card" onclick="expandImage('images/packet1.png', 'Network Design: Secure Office LAN with VLAN implementation.')">
+                <div class="work-img">
+                    <img src="images/packet1.png" alt="Packet Tracer">
+                </div>
+                <div class="work-info">
+                    <h4>Network Architecture</h4>
+                    <p>Designing secure, scalable enterprise networks using Cisco Packet Tracer.</p>
+                </div>
+            </div>
+
         </div>
     </section>
 
     <section id="certifications">
-        </section>
+        <h2 class="section-title">Professional <span>Certs</span></h2>
+        <div class="cert-grid">
+            <img src="images/cert1.png" onclick="expandImage(this.src, 'Cisco Cybersecurity')" alt="Cert">
+            <img src="images/cert2.png" onclick="expandImage(this.src, 'Linux Essentials')" alt="Cert">
+            <img src="images/cert3.png" onclick="expandImage(this.src, 'OS Basics')" alt="Cert">
+            <img src="images/cert5.png" onclick="expandImage(this.src, 'IBM Cyber Fundamentals')" alt="Cert">
+        </div>
+    </section>
 
-    </body>
+    <div id="imageModal" class="modal" onclick="closeImageModal()">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="expandedImg">
+        <div id="imgCaption"></div>
+    </div>
+
+    <div id="contactModal" class="modal">
+        <div class="modal-content contact-modal-box">
+            <span class="close-modal" onclick="closeContactModal()">&times;</span>
+            <h2>Let's <span>Connect</span></h2>
+            <div class="modal-btns">
+                <a href="https://wa.me/27637411528" target="_blank" class="modal-btn whatsapp">
+                    <i class="fab fa-whatsapp"></i> WhatsApp Me
+                </a>
+                <a href="mailto:sibonelompanza60@gmail.com" class="modal-btn email">
+                    <i class="fas fa-envelope"></i> Send Email
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer id="contact-footer">
+        <p>© 2026 Sibonelo Mpanza | NellowTech 💜</p>
+        <div class="socials">
+            <a href="https://www.linkedin.com/in/sibonelo-mpanza-724328360"><i class="fab fa-linkedin"></i></a>
+            <a href="https://nellow101.github.io/nellow-photography/"><i class="fas fa-camera"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        function openContactModal() { document.getElementById("contactModal").style.display = "flex"; }
+        function closeContactModal() { document.getElementById("contactModal").style.display = "none"; }
+
+        function expandImage(src, caption) {
+            document.getElementById("imageModal").style.display = "flex";
+            document.getElementById("expandedImg").src = src;
+            document.getElementById("imgCaption").innerText = caption;
+        }
+
+        function closeImageModal() { document.getElementById("imageModal").style.display = "none"; }
+
+        window.onclick = function(event) {
+            if (event.target.className === 'modal') {
+                event.target.style.display = "none";
+            }
+        }
+    </script>
+</body>
 </html>
